@@ -5,9 +5,12 @@ import { FoodContext } from "../Context";
 const NavBar = () => {
   const value = useContext(FoodContext);
   return (
-    <nav className="navbar navbar-light" style={{ backgroundColor: "#EC7A05" }}>
+    <nav
+      className="navbar navbar-light fixed-top"
+      style={{ backgroundColor: "#EC7A05" }}
+    >
       <span>
-        <a className="navbar-brand" href="/">
+        <Link to="/" className="navbar-brand">
           <img
             src={require("../img/hamburger.png")}
             width="50"
@@ -26,11 +29,18 @@ const NavBar = () => {
           >
             &nbsp;B4BURGER
           </span>
-        </a>
+        </Link>
       </span>
-      <span style={{ float: "right" }}>
-        <Link to="/cart">
-          <button>View Cart({value.cartCount})</button>
+      <span style={{ float: "right", color: "white" }}>
+        Cart Status: Items <b>{value.cartCount}</b> : Value:{" "}
+        <b>Rs. {value.total}/-</b>&nbsp;&nbsp;
+        <Link
+          to="/cart"
+          className={
+            value.cartCount ? "btn btn-light" : "btn btn-outline-light disabled"
+          }
+        >
+          Checkout
         </Link>
       </span>
     </nav>

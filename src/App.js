@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 //import "./App.css";
+import "./main.css";
 import NavBar from "./components/NavBar";
 import Menu from "./components/Menu";
 

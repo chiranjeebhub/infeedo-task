@@ -8,7 +8,7 @@ const Menu = () => {
     return food.name.toLowerCase().indexOf(value.query.toLowerCase()) !== -1;
   });
   return (
-    <div style={{ textAlign: "center" }}>
+    <div style={{ textAlign: "center", marginTop: "50px" }}>
       {/* <h1>Our Menu</h1> */}
       <div className="jumbotron jumbotron-fluid">
         <div className="container" style={{ textAlign: "center" }}>
@@ -16,6 +16,7 @@ const Menu = () => {
           <p className="lead">
             Burger - Pizza - Beverage - Coffee - Sweets - Meals
           </p>
+
           <form>
             <input
               name="moviename"
@@ -53,7 +54,10 @@ const Menu = () => {
                       </span>
                     </b>
                   </p>
-                  <button onClick={() => value.addtoCart(item)}>
+                  <button
+                    className="btn btn-warning"
+                    onClick={() => value.addtoCart(item)}
+                  >
                     Add to Cart
                   </button>
                 </div>
