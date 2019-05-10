@@ -1,22 +1,14 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+import React, { useContext } from "react";
+import { FoodContext } from "../Context";
 
 const Menu = () => {
-  const [foodItem, setFoodItem] = useState([]);
-  const [query, setQuery] = useState("");
+  const value = useContext(FoodContext);
 
-  useEffect(() => {
-    axios.get(`http://demo8960438.mockable.io/food`).then(res => {
-      setFoodItem(res.data);
-    });
-  }, []);
-
-  console.log(foodItem);
-  let filteredFood = foodItem.filter(food => {
-    return food.name.toLowerCase().indexOf(query.toLowerCase()) !== -1;
+  let filteredFood = value.foodItem.filter(food => {
+    return food.name.toLowerCase().indexOf(value.query.toLowerCase()) !== -1;
   });
   return (
-    <div>
+    <div style={{ textAlign: "center" }}>
       {/* <h1>Our Menu</h1> */}
       <div className="jumbotron jumbotron-fluid">
         <div className="container" style={{ textAlign: "center" }}>
@@ -31,8 +23,8 @@ const Menu = () => {
               type="search, submit"
               placeholder="Search"
               style={{ height: "50px" }}
-              value={query}
-              onChange={e => setQuery(e.target.value)}
+              value={value.query}
+              onChange={e => value.setQuery(e.target.value)}
             />
           </form>
         </div>
@@ -51,7 +43,9 @@ const Menu = () => {
                   <h5 className="card-title">{item.name}</h5>
                   <p className="card-text">
                     <span style={{ color: "#EC7A05" }}>{item.category}</span>
-                    <hr />
+                  </p>
+                  <hr />
+                  <p>
                     <b>
                       Price:{" "}
                       <span style={{ fontSize: "20px", color: "#EC7A05" }}>
@@ -59,71 +53,14 @@ const Menu = () => {
                       </span>
                     </b>
                   </p>
+                  <button onClick={() => value.addtoCart(item)}>
+                    Add to Cart
+                  </button>
                 </div>
               </div>
             </div>
           );
         })}
-
-        {/*
-    
-     <div class="" style={{ width: "18rem" }}>
-          <img
-            src={require("../img/sprite.jpg")}
-            class="card-img-top"
-            alt="..."
-          />
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </p>
-          </div>
-        </div>
-        <div class="" style={{ width: "18rem" }}>
-          <img
-            src={require("../img/sprite.jpg")}
-            class="card-img-top"
-            alt="..."
-          />
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </p>
-          </div>
-        </div>
-        <div class="" style={{ width: "18rem" }}>
-          <img
-            src={require("../img/sprite.jpg")}
-            class="card-img-top"
-            alt="..."
-          />
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </p>
-          </div>
-        </div>
-        <div class="" style={{ width: "18rem" }}>
-          <img
-            src={require("../img/sprite.jpg")}
-            class="card-img-top"
-            alt="..."
-          />
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </p>
-          </div>
-        </div>
-    */}
       </div>
     </div>
   );
