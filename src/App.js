@@ -32,6 +32,16 @@ function App() {
     // console.log(cartItem);
   };
 
+  const removeFromCart = cartItem1 => {
+    const newcart = cart.filter(item => {
+      return item !== cartItem1;
+    });
+    setCart([...newcart]);
+    setCartCount(cartCount - 1);
+    setTotal(total - cartItem1.price);
+    //console.log("remove " + cartItem1);
+  };
+
   const value = {
     foodItem,
     setFoodItem,
@@ -42,6 +52,7 @@ function App() {
     cartCount,
     setCartCount,
     addtoCart,
+    removeFromCart,
     total,
     setTotal
   };

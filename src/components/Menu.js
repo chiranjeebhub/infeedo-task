@@ -8,7 +8,7 @@ const Menu = () => {
     return food.name.toLowerCase().indexOf(value.query.toLowerCase()) !== -1;
   });
   return (
-    <div style={{ textAlign: "center", marginTop: "50px" }}>
+    <div style={{ textAlign: "center", marginTop: "70px" }}>
       {/* <h1>Our Menu</h1> */}
       <div className="jumbotron jumbotron-fluid">
         <div className="container" style={{ textAlign: "center" }}>

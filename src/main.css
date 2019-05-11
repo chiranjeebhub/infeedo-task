@@ -12,8 +12,8 @@
 }
 
 .dish-content {
-  margin-top: 12px;
-  margin-bottom: 40px;
+  margin-top: 10px;
+  margin-bottom: 0px;
 }
 .dish-meta {
   font-size: 12px;
@@ -32,7 +32,7 @@
 .dish-price {
   position: absolute;
   right: 16px;
-  top: 0px;
+  top: 10px;
   font-size: 26px;
   color: #e03c23;
   font-weight: 500;
