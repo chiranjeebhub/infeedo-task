@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { FoodContext } from "../Context";
 import { Link } from "react-router-dom";
 
@@ -8,29 +8,33 @@ const Confirm = () => {
   const cartItem = value.cart.map(item => {
     return (
       <div key={item.id}>
-        <div className="menu-content">
-          <div className="row">
-            <div className="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-              <div className="dish-img">
-                <span onClick={() => value.removeFromCart(item)}>X</span>
-                <Link to="/">
-                  <img src={item.link} alt="" className="card-img-top" />
-                </Link>
-              </div>
-            </div>
-            <div className="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-              <div className="dish-content">
-                <h5 className="dish-title">
-                  <Link to="/">{item.name}</Link>
-                </h5>
-                <span className="dish-meta">Description</span>
-                <div className="dish-price">
-                  <p>Rs. {item.price}/-</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <ul class="list-group">
+          <li class="list-group-item">
+            <span
+              className="btn btn-outline-danger"
+              onClick={() => value.removeFromCart(item)}
+            >
+              x
+            </span>
+            <span>
+              <Link to="/">
+                <img
+                  src={item.link}
+                  alt=""
+                  className="img-fluid"
+                  width="100px"
+                  height="100px"
+                />
+              </Link>
+            </span>
+            <span>
+              <Link to="/">{item.name}</Link>
+            </span>
+            <span style={{ float: "right", paddingTop: "15px" }}>
+              Rs. {item.price}/-
+            </span>
+          </li>
+        </ul>
       </div>
     );
   });
@@ -52,6 +56,8 @@ const Confirm = () => {
                   type="text"
                   className="form-control"
                   placeholder="First name"
+                  value={value.name}
+                  onChange={e => value.setName(e.target.value)}
                   required
                 />
               </div>
@@ -72,10 +78,19 @@ const Confirm = () => {
                 id="inputAddress"
                 placeholder="Address"
                 rows="5"
+                value={value.address}
+                onChange={e => value.setAddress(e.target.value)}
                 required
               />
             </div>
-            <Link to="/" className="btn btn-primary btn-block">
+            <Link
+              to="/success"
+              className={
+                value.cartCount
+                  ? "btn btn-primary btn-block"
+                  : "btn btn-primary btn-block disabled"
+              }
+            >
               Confirm & Submit
             </Link>
           </form>
@@ -84,12 +99,17 @@ const Confirm = () => {
           <div>
             <h4 style={{ textAlign: "center" }}>Confirm your Order</h4>
             <br />
-            {value.cart.length ? (
+            {value.cartCount ? (
               <div>
                 {cartItem}
-                <h4 style={{ textAlign: "right" }}>
-                  Total: Rs. {value.total}/-
-                </h4>
+                <div style={{ textAlign: "right", marginTop: "10px" }}>
+                  <h6>Discounted Price: Rs. {value.total}/-</h6>
+                  <p>inFeedo Discount: 20%</p>
+                  <hr />
+                  <h6 style={{ textAlign: "right", color: "green" }}>
+                    Discounted Price: Rs. {(value.total * 80) / 100}/-
+                  </h6>
+                </div>
               </div>
             ) : (
               <div>

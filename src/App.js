@@ -9,6 +9,7 @@ import { Route, Switch } from "react-router-dom";
 import axios from "axios";
 import { FoodContext } from "./Context";
 import Confirm from "./components/Confirm";
+import Success from "./components/Success";
 
 function App() {
   const [foodItem, setFoodItem] = useState([]);
@@ -16,6 +17,8 @@ function App() {
   const [cart, setCart] = useState([]);
   const [cartCount, setCartCount] = useState(0);
   const [total, setTotal] = useState(0);
+  const [name, setName] = useState("");
+  const [address, setAddress] = useState("");
   useEffect(() => {
     axios.get(`http://demo8960438.mockable.io/food`).then(res => {
       setFoodItem(res.data);
@@ -54,7 +57,11 @@ function App() {
     addtoCart,
     removeFromCart,
     total,
-    setTotal
+    setTotal,
+    name,
+    setName,
+    address,
+    setAddress
   };
   return (
     <FoodContext.Provider value={value}>
@@ -63,6 +70,7 @@ function App() {
         <Switch>
           <Route exact path="/" component={Menu} />
           <Route path="/cart" component={Confirm} />
+          <Route path="/success" component={Success} />
         </Switch>
       </div>
     </FoodContext.Provider>
