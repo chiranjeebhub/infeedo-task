@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/infeedo-task/static/css/main.6c970723.chunk.css",
-    "main.js": "/infeedo-task/static/js/main.cce99221.chunk.js",
-    "main.js.map": "/infeedo-task/static/js/main.cce99221.chunk.js.map",
+    "main.js": "/infeedo-task/static/js/main.00344d90.chunk.js",
+    "main.js.map": "/infeedo-task/static/js/main.00344d90.chunk.js.map",
     "runtime~main.js": "/infeedo-task/static/js/runtime~main.40678114.js",
     "runtime~main.js.map": "/infeedo-task/static/js/runtime~main.40678114.js.map",
     "static/js/2.216d58fe.chunk.js": "/infeedo-task/static/js/2.216d58fe.chunk.js",
     "static/js/2.216d58fe.chunk.js.map": "/infeedo-task/static/js/2.216d58fe.chunk.js.map",
     "index.html": "/infeedo-task/index.html",
-    "precache-manifest.2b671e061d53d9cd3f56bdcb6b46245e.js": "/infeedo-task/precache-manifest.2b671e061d53d9cd3f56bdcb6b46245e.js",
+    "precache-manifest.fb0b617af515e6a3ea2a305cec0df150.js": "/infeedo-task/precache-manifest.fb0b617af515e6a3ea2a305cec0df150.js",
     "service-worker.js": "/infeedo-task/service-worker.js",
     "static/css/main.6c970723.chunk.css.map": "/infeedo-task/static/css/main.6c970723.chunk.css.map",
     "static/media/hamburger.png": "/infeedo-task/static/media/hamburger.e7eab556.png"
