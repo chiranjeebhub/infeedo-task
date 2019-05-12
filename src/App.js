@@ -8,7 +8,7 @@ import { Route, Switch } from "react-router-dom";
 
 import axios from "axios";
 import { FoodContext } from "./Context";
-import Confirm from "./components/Confirm";
+import Verify from "./pages/Verify";
 import Success from "./components/Success";
 import Home from "./pages/Home";
 
@@ -27,7 +27,7 @@ function App() {
   const [maxPrice, setMaxPrice] = useState(0);
 
   useEffect(() => {
-    axios.get(`http://demo8960438.mockable.io/food`).then(res => {
+    axios.get(`https://demo8960438.mockable.io/food`).then(res => {
       setFoodItem(res.data);
     });
   }, []);
@@ -47,50 +47,6 @@ function App() {
       console.log("already exists");
     }
   };
-
-  // const filterFood = () => {
-  //   let {
-  //     foodItem,
-  //     category,
-  //     capacity,
-  //     price,
-  //     minSize,
-  //     maxSize,
-  //     breakfast,
-  //     pets
-  //   } = this.state;
-
-  //   let tempRooms = [...rooms];
-  //   // transform values
-  //   // get capacity
-  //   capacity = parseInt(capacity);
-  //   price = parseInt(price);
-  //   // filter by type
-  //   if (type !== "all") {
-  //     tempRooms = tempRooms.filter(room => room.type === type);
-  //   }
-  //   // filter by capacity
-  //   if (capacity !== 1) {
-  //     tempRooms = tempRooms.filter(room => room.capacity >= capacity);
-  //   }
-  //   // filter by price
-  //   tempRooms = tempRooms.filter(room => room.price <= price);
-  //   //filter by size
-  //   tempRooms = tempRooms.filter(
-  //     room => room.size >= minSize && room.size <= maxSize
-  //   );
-  //   //filter by breakfast
-  //   if (breakfast) {
-  //     tempRooms = tempRooms.filter(room => room.breakfast === true);
-  //   }
-  //   //filter by pets
-  //   if (pets) {
-  //     tempRooms = tempRooms.filter(room => room.pets === true);
-  //   }
-  //   this.setState({
-  //     sortedRooms: tempRooms
-  //   });
-  // };
 
   const removeFromCart = cartItem1 => {
     const newcart = cart.filter(item => {
@@ -128,7 +84,7 @@ function App() {
         <NavBar />
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route path="/cart" component={Confirm} />
+          <Route path="/cart" component={Verify} />
           <Route path="/success" component={Success} />
         </Switch>
       </div>

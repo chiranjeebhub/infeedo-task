@@ -5,7 +5,7 @@ const SearchBox = () => {
   const value = useContext(FoodContext);
 
   return (
-    <div style={{ textAlign: "center", marginTop: "70px" }}>
+    <div class="search">
       {/* <h1>Our Menu</h1> */}
       <div className="jumbotron jumbotron-fluid">
         <div className="container" style={{ textAlign: "center" }}>
@@ -14,7 +14,7 @@ const SearchBox = () => {
             Burger - Pizza - Beverage - Coffee - Sweets - Meals
           </p> */}
 
-          <form>
+          <form onSubmit={e => e.preventDefault()}>
             <input
               name="foodname"
               className="form-control mr-sm-2"

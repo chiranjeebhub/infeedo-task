@@ -78,24 +78,25 @@ const Menu = () => {
         className="row justify-content-center"
         style={{ display: "flex", width: "100%", textAlign: "center" }}
       >
-        {/* {value.filteredFood.length ? (
-          value.filteredFood
-            // .sort(
-            //   ({ rating: previousID }, { rating: currentID }) =>
-            //     previousID - currentID
-            // )
-            .map((item, i) => {
-              return <MenuItem item={item} i={i} />;
-            })
+        {value.filteredFood.length ? (
+          <div />
         ) : (
+          // value.filteredFood
+          //   // .sort(
+          //   //   ({ rating: previousID }, { rating: currentID }) =>
+          //   //     previousID - currentID
+          //   // )
+          //   .map((item, i) => {
+          //     return <MenuItem item={item} i={i} />;
+          //   })
           <div
             className="alert alert-danger"
             role="alert"
-            style={{ textAlign: "center" }}
+            style={{ textAlign: "center", marginTop: "10px" }}
           >
             Sorry. No result found for the query: <b>{value.query}</b>
           </div>
-        )} */}
+        )}
       </div>
       {/* )} */}
     </div>

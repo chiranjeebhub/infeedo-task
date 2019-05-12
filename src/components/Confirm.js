@@ -70,7 +70,7 @@ const Confirm = () => {
             {value.cartCount ? (
               <div>
                 <CartItem />
-                <a href="/cart" className="btn btn-secondary btn-block">
+                <a href="/" className="btn btn-secondary btn-block">
                   Empty Cart
                 </a>
               </div>
