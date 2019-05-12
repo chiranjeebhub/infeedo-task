@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/infeedo-task/precache-manifest.189bd6e6b747148e57f6eed145b821d4.js"
+  "/infeedo-task/precache-manifest.b0ebfaac32b454e5e157389e92ab5fd4.js"
 );
 
 self.addEventListener('message', (event) => {
