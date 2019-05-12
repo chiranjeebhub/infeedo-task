@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/infeedo-task/static/css/main.67a19627.chunk.css",
+    "main.js": "/infeedo-task/static/js/main.75eb21d5.chunk.js",
+    "main.js.map": "/infeedo-task/static/js/main.75eb21d5.chunk.js.map",
+    "runtime~main.js": "/infeedo-task/static/js/runtime~main.40678114.js",
+    "runtime~main.js.map": "/infeedo-task/static/js/runtime~main.40678114.js.map",
+    "static/js/2.7ca4214c.chunk.js": "/infeedo-task/static/js/2.7ca4214c.chunk.js",
+    "static/js/2.7ca4214c.chunk.js.map": "/infeedo-task/static/js/2.7ca4214c.chunk.js.map",
+    "index.html": "/infeedo-task/index.html",
+    "precache-manifest.a9298a3b51c2e351183311e0729813ae.js": "/infeedo-task/precache-manifest.a9298a3b51c2e351183311e0729813ae.js",
+    "service-worker.js": "/infeedo-task/service-worker.js",
+    "static/css/main.67a19627.chunk.css.map": "/infeedo-task/static/css/main.67a19627.chunk.css.map",
+    "static/media/hamburger.png": "/infeedo-task/static/media/hamburger.e7eab556.png"
+  }
+}
