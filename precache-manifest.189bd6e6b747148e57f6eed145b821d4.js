@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "5f9b789283f9a08c3ccc95ec46702158",
+    "revision": "059c73d3b7c1bf939660e5bae0debf23",
     "url": "/infeedo-task/index.html"
   },
   {
-    "revision": "6b5a30afdc200f3a1299",
+    "revision": "175a1df6ee936234bd5f",
     "url": "/infeedo-task/static/css/main.11c16c09.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/infeedo-task/static/js/2.216d58fe.chunk.js"
   },
   {
-    "revision": "6b5a30afdc200f3a1299",
-    "url": "/infeedo-task/static/js/main.45e7b387.chunk.js"
+    "revision": "175a1df6ee936234bd5f",
+    "url": "/infeedo-task/static/js/main.bed2b71c.chunk.js"
   },
   {
     "revision": "0985291076502e432ae1",
