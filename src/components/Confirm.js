@@ -1,43 +1,11 @@
-import React, { useContext, useState } from "react";
+import React, { useState, useContext } from "react";
 import { FoodContext } from "../Context";
 import { Link } from "react-router-dom";
+import CartItem from "./CartItem";
 
 const Confirm = () => {
   const value = useContext(FoodContext);
 
-  const cartItem = value.cart.map(item => {
-    return (
-      <div key={item.id}>
-        <ul class="list-group">
-          <li class="list-group-item">
-            <span
-              className="btn btn-outline-danger"
-              onClick={() => value.removeFromCart(item)}
-            >
-              x
-            </span>
-            <span>
-              <Link to="/">
-                <img
-                  src={item.link}
-                  alt=""
-                  className="img-fluid"
-                  width="100px"
-                  height="100px"
-                />
-              </Link>
-            </span>
-            <span>
-              <Link to="/">{item.name}</Link>
-            </span>
-            <span style={{ float: "right", paddingTop: "15px" }}>
-              Rs. {item.price}/-
-            </span>
-          </li>
-        </ul>
-      </div>
-    );
-  });
   return (
     <div className="container" style={{ marginTop: "150px" }}>
       <div className="row">
@@ -91,7 +59,7 @@ const Confirm = () => {
                   : "btn btn-primary btn-block disabled"
               }
             >
-              Confirm & Submit
+              Confirm &amp; Order
             </Link>
           </form>
         </div>
@@ -101,20 +69,15 @@ const Confirm = () => {
             <br />
             {value.cartCount ? (
               <div>
-                {cartItem}
-                <div style={{ textAlign: "right", marginTop: "10px" }}>
-                  <h6>Discounted Price: Rs. {value.total}/-</h6>
-                  <p>inFeedo Discount: 20%</p>
-                  <hr />
-                  <h6 style={{ textAlign: "right", color: "green" }}>
-                    Discounted Price: Rs. {(value.total * 80) / 100}/-
-                  </h6>
-                </div>
+                <CartItem />
+                <a href="/cart" className="btn btn-secondary btn-block">
+                  Empty Cart
+                </a>
               </div>
             ) : (
               <div>
                 <div
-                  class="alert alert-danger"
+                  className="alert alert-danger"
                   role="alert"
                   style={{ textAlign: "center" }}
                 >
